@@ -14,7 +14,7 @@
    <string>Графический редактор</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lbl_image">
     <property name="geometry">
      <rect>
       <x>4</x>
@@ -46,64 +46,66 @@
    <property name="nativeMenuBar">
     <bool>true</bool>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menu_help">
     <property name="title">
      <string>Помощь</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="action_program"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
+   <widget class="QMenu" name="menu_figures">
     <property name="title">
      <string>Фигуры</string>
     </property>
-    <addaction name="action_4"/>
-    <addaction name="action_2"/>
-    <addaction name="action_3"/>
+    <addaction name="action_brush"/>
+    <addaction name="action_line"/>
+    <addaction name="action_circle"/>
     <addaction name="action_5"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+   <widget class="QMenu" name="menu_instruments">
     <property name="title">
      <string>Инстументы</string>
     </property>
-    <addaction name="action_6"/>
-    <addaction name="action_7"/>
-    <addaction name="action_8"/>
+    <addaction name="action_eraser"/>
+    <addaction name="action_back"/>
+    <addaction name="action_forward"/>
    </widget>
-   <widget class="QMenu" name="menu_4">
+   <widget class="QMenu" name="menu_file">
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action_9"/>
-    <addaction name="action_10"/>
+    <addaction name="action_open"/>
+    <addaction name="action_save"/>
    </widget>
-   <widget class="QMenu" name="menu_5">
+   <widget class="QMenu" name="menu_options">
     <property name="title">
-     <string>Толщина</string>
+     <string>Параметры</string>
     </property>
+    <addaction name="action_thickness"/>
+    <addaction name="action_color"/>
    </widget>
-   <addaction name="menu_4"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu"/>
-   <addaction name="menu_5"/>
+   <addaction name="menu_file"/>
+   <addaction name="menu_figures"/>
+   <addaction name="menu_instruments"/>
+   <addaction name="menu_help"/>
+   <addaction name="menu_options"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="action_program">
    <property name="text">
     <string>О программе</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="action_line">
    <property name="text">
     <string>Линия</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="action_circle">
    <property name="text">
     <string>Окружность</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="action_brush">
    <property name="text">
     <string>Кисть</string>
    </property>
@@ -113,29 +115,39 @@
     <string>Прямоугольник</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="action_eraser">
    <property name="text">
     <string>Ластик</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="action_back">
    <property name="text">
     <string>Назад</string>
    </property>
   </action>
-  <action name="action_8">
+  <action name="action_forward">
    <property name="text">
     <string>Вперёд</string>
    </property>
   </action>
-  <action name="action_9">
+  <action name="action_open">
    <property name="text">
-    <string>Загрузить</string>
+    <string>Открыть</string>
    </property>
   </action>
-  <action name="action_10">
+  <action name="action_save">
    <property name="text">
     <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="action_thickness">
+   <property name="text">
+    <string>Толщина</string>
+   </property>
+  </action>
+  <action name="action_color">
+   <property name="text">
+    <string>Цвет</string>
    </property>
   </action>
  </widget>
