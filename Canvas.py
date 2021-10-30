@@ -12,18 +12,42 @@ class Canvas(QWidget):
     def __init__(self):
         super().__init__()
         self.objects = []
+        self.instrument = 'b'
 
     def paintEvent(self, event):
         painter = QPainter()
         painter.begin(self)
-        for object in self.objects:
-            object.draw(painter)
+        for obj in self.objects:
+            obj.draw(painter)
         painter.end()
 
-    def mouseMoveEvent(self, event):
-        self.objects.append(Brush(event.x(), event.y()))
+    def mousePressEvent(self, event):
+        if self.instrument == 'b':
+            self.objects.append(Brush(event.x(), event.y()))
+        elif self.instrument == 'l':
+            self.objects.append(Line(event.x(), event.y(), event.x(), event.y()))
+        elif self.instrument == 'r':
+            self.objects.append(Rectangle(event.x(), event.y(), event.x(), event.y()))
+        elif self.instrument == 'c':
+            self.objects.append(Circle(event.x(), event.y(), event.x(), event.y()))
         self.update()
 
-    def mousePressEvent(self, event):
-        self.objects.append(Brush(event.x(), event.y()))
+    def mouseMoveEvent(self, event):
+        if self.instrument == 'b':
+            self.objects.append(Brush(event.x(), event.y()))
+        elif self.instrument == 'l' or self.instrument == 'r' or self.instrument == 'c':
+            self.objects[-1].ex = event.x()
+            self.objects[-1].ey = event.y()
         self.update()
+
+    def set_brush(self):
+        self.instrument = 'b'
+
+    def set_circle(self):
+        self.instrument = 'c'
+
+    def set_line(self):
+        self.instrument = 'l'
+
+    def set_rectangle(self):
+        self.instrument = 'r'

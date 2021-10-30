@@ -59,7 +59,7 @@
     <addaction name="action_brush"/>
     <addaction name="action_line"/>
     <addaction name="action_circle"/>
-    <addaction name="action_5"/>
+    <addaction name="action_rectangle"/>
    </widget>
    <widget class="QMenu" name="menu_instruments">
     <property name="title">
@@ -110,7 +110,7 @@
     <string>Кисть</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="action_rectangle">
    <property name="text">
     <string>Прямоугольник</string>
    </property>

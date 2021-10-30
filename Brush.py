@@ -1,13 +1,17 @@
-from PyQt5.QtGui import QColor, QBrush
+from PyQt5.QtGui import QColor
+
+from Figure import Figure
+from const import COLOR, THIKNESS
+
+# Опасен, изменяет painter
 
 
-class Brush:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.color = (0, 0, 0)
+class Brush(Figure):
+    def __init__(self, sx, sy):
+        super().__init__(sx, sy)
 
     def draw(self, painter):
-        painter.setBrush(QBrush(QColor(self.color[0], self.color[1], self.color[2])))
-        painter.setPen(QColor(self.color[0], self.color[1], self.color[2]))
-        painter.drawEllipse(self.x - 5, self.y - 5, 10, 10)
+        super().draw(painter)
+        painter.setBrush(COLOR)
+        painter.drawEllipse(self.sx - THIKNESS // 2, self.sy - THIKNESS // 2, THIKNESS, THIKNESS)
+        painter.setBrush(QColor(255, 255, 255))
