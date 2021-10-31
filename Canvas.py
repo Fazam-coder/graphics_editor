@@ -23,21 +23,25 @@ class Canvas(QWidget):
 
     def mousePressEvent(self, event):
         if self.instrument == 'b':
-            self.objects.append(Brush(event.x(), event.y()))
+            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y()))
         elif self.instrument == 'l':
             self.objects.append(Line(event.x(), event.y(), event.x(), event.y()))
         elif self.instrument == 'r':
             self.objects.append(Rectangle(event.x(), event.y(), event.x(), event.y()))
         elif self.instrument == 'c':
             self.objects.append(Circle(event.x(), event.y(), event.x(), event.y()))
+        elif self.instrument == 'e':
+            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y()))
         self.update()
 
     def mouseMoveEvent(self, event):
         if self.instrument == 'b':
-            self.objects.append(Brush(event.x(), event.y()))
+            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y()))
         elif self.instrument == 'l' or self.instrument == 'r' or self.instrument == 'c':
             self.objects[-1].ex = event.x()
             self.objects[-1].ey = event.y()
+        elif self.instrument == 'e':
+            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y()))
         self.update()
 
     def set_brush(self):
@@ -51,3 +55,6 @@ class Canvas(QWidget):
 
     def set_rectangle(self):
         self.instrument = 'r'
+
+    def set_eraser(self):
+        self.instrument = 'e'
