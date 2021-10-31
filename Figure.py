@@ -1,4 +1,4 @@
-from PyQt5.QtGui import QColor, QPen
+from PyQt5.QtGui import QPen
 
 from const import *
 

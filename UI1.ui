@@ -23,22 +23,6 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QLabel" name="lbl_image">
-    <property name="geometry">
-     <rect>
-      <x>-6</x>
-      <y>-5</y>
-      <width>801</width>
-      <height>551</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="enabled">
