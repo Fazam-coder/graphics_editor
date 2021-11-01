@@ -1,5 +1,5 @@
-from PyQt5.QtGui import QPainter
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtGui import QPainter, QPixmap
+from PyQt5.QtWidgets import QWidget, QFileDialog, QLabel
 
 from Brush import Brush
 from Line import Line
@@ -58,3 +58,11 @@ class Canvas(QWidget):
 
     def set_eraser(self):
         self.instrument = 'e'
+
+    def open_image(self):
+        self.lbl_image = QLabel(self)
+        self.lbl_image.resize(self.size())
+        self.lbl_image.move(0, 0)
+        fname = QFileDialog.getOpenFileName(self, 'Выбрать картинку', '')[0]
+        self.pixmap = QPixmap(fname)
+        self.lbl_image.setPixmap(self.pixmap)

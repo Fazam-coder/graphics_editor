@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QWidget
 
 
 class AboutProgram(QWidget):
-    def __init__(self, arg):
+    def __init__(self):
         super().__init__()
         uic.loadUi('about_program.ui', self)
         with open('about_program.txt', 'r', encoding='utf-8') as file:
