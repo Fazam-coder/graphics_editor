@@ -8,5 +8,4 @@ from const import COLOR, THIKNESS
 class Brush(Figure):
     def draw(self, painter):
         super().draw(painter)
-        painter.setPen(QPen(COLOR, THIKNESS))
         painter.drawLine(QPoint(self.sx, self.sy), QPoint(self.ex, self.ey))

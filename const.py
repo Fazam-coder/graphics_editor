@@ -1,4 +1,4 @@
 from PyQt5.QtGui import QColor
 
-COLOR = QColor(0, 0, 0)
-THIKNESS = 5
+COLOR = QColor(255, 125, 0)
+THIKNESS = 10
