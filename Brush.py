@@ -1,8 +1,6 @@
 from PyQt5.QtCore import QPoint
-from PyQt5.QtGui import QPen
 
 from Figure import Figure
-from const import COLOR, THIKNESS
 
 
 class Brush(Figure):

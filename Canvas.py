@@ -1,11 +1,14 @@
-from PyQt5.QtGui import QPainter, QPixmap
-from PyQt5.QtWidgets import QWidget, QFileDialog, QLabel
+from PyQt5.QtGui import QPainter, QPixmap, QColor
+from PyQt5.QtWidgets import QWidget, QFileDialog, QLabel, QColorDialog
 
 from Brush import Brush
 from Line import Line
 from Rectangle import Rectangle
 from Circle import Circle
 from Eraser import Eraser
+
+color = QColor(0, 0, 0)
+thikness = 5
 
 
 class Canvas(QWidget):
@@ -23,25 +26,25 @@ class Canvas(QWidget):
 
     def mousePressEvent(self, event):
         if self.instrument == 'b':
-            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y(), color, thikness))
         elif self.instrument == 'l':
-            self.objects.append(Line(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Line(event.x(), event.y(), event.x(), event.y(), color, thikness))
         elif self.instrument == 'r':
-            self.objects.append(Rectangle(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Rectangle(event.x(), event.y(), event.x(), event.y(), color, thikness))
         elif self.instrument == 'c':
-            self.objects.append(Circle(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Circle(event.x(), event.y(), event.x(), event.y(), color, thikness))
         elif self.instrument == 'e':
-            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y(), color, thikness))
         self.update()
 
     def mouseMoveEvent(self, event):
         if self.instrument == 'b':
-            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Brush(event.x(), event.y(), event.x(), event.y(), color, thikness))
         elif self.instrument == 'l' or self.instrument == 'r' or self.instrument == 'c':
             self.objects[-1].ex = event.x()
             self.objects[-1].ey = event.y()
         elif self.instrument == 'e':
-            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y()))
+            self.objects.append(Eraser(event.x(), event.y(), event.x(), event.y(), color, thikness))
         self.update()
 
     def set_brush(self):
@@ -66,3 +69,10 @@ class Canvas(QWidget):
         fname = QFileDialog.getOpenFileName(self, 'Выбрать картинку', '')[0]
         self.pixmap = QPixmap(fname)
         self.lbl_image.setPixmap(self.pixmap)
+
+    def set_color(self):
+        global color
+        color = QColorDialog.getColor()
+
+    def set_thikness(self):
+        pass
