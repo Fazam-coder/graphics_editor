@@ -1,6 +1,5 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPainter, QColor, QPixmap
-from PyQt5.QtWidgets import QWidget, QFileDialog, QColorDialog, QInputDialog, QLabel
+from PyQt5.QtGui import QPainter, QColor
+from PyQt5.QtWidgets import QWidget, QColorDialog, QInputDialog
 
 from Brush import Brush
 from Line import Line
@@ -96,3 +95,6 @@ class Canvas(QWidget):
                                               thickness, MIN_THICKNESS, MAX_THICKNESS)
         if ok_pressed:
             thickness = age
+
+    def fill(self):
+        pass

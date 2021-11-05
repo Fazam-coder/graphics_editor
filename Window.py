@@ -1,11 +1,9 @@
 from PyQt5 import uic
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMainWindow, QLabel, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QLabel
 
 from Canvas import Canvas
 from AboutProgram import AboutProgram
-from const import *
+
 from query_db import *
 
 
