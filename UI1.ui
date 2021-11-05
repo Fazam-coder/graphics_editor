@@ -65,13 +65,6 @@
     <addaction name="action_back"/>
     <addaction name="action_forward"/>
    </widget>
-   <widget class="QMenu" name="menu_file">
-    <property name="title">
-     <string>Файл</string>
-    </property>
-    <addaction name="action_open"/>
-    <addaction name="action_save"/>
-   </widget>
    <widget class="QMenu" name="menu_options">
     <property name="title">
      <string>Параметры</string>
@@ -79,7 +72,6 @@
     <addaction name="action_thickness"/>
     <addaction name="action_color"/>
    </widget>
-   <addaction name="menu_file"/>
    <addaction name="menu_figures"/>
    <addaction name="menu_instruments"/>
    <addaction name="menu_help"/>

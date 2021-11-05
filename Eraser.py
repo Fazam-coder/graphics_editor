@@ -6,6 +6,6 @@ from Figure import Figure
 class Eraser(Figure):
     def draw(self, painter):
         super().draw(painter)
-        r = QRect(QPoint(), self.thikness * QSize())
+        r = QRect(QPoint(), self.thickness * QSize())
         r.moveCenter(QPoint(self.ex, self.ey))
         painter.eraseRect(r)
