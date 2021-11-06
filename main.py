@@ -1,7 +1,8 @@
 import sys
 
-from Window import Window
+from Start_window import Start_window
 from PyQt5.QtWidgets import QApplication
+from Window import Window
 
 
 def except_hook(cls, exception, traceback):
@@ -10,7 +11,6 @@ def except_hook(cls, exception, traceback):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = Window()
-    form.show()
+    form = Start_window()
     sys.excepthook = except_hook
     sys.exit(app.exec())
